@@ -1,6 +1,7 @@
 // runs .env file
 const dotenv = require("dotenv").config();
 const express = require("express");
+const cors = require('cors');
 
 const app = express();
 // Port number changes once thrown onto Heroku
@@ -11,6 +12,7 @@ app.use(express.json());
 
 // _ is a placeholder
 // Doesn't need json plugin to work
+// Internal api
 app.use("/api/*", (_,res) => {
     res.json({data: "The API LIVES!!!!"});
 });
